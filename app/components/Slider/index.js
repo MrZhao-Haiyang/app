@@ -1,163 +1,31 @@
 import React,{Component} from 'react';
-import ReactSwipe from 'react-swipe'; //轮播图插件
-import './index.less';
-import {Link} from 'react-router-dom';
+import ReactSwipe from "react-swipe";
+import "./index.less"
 export default class Slider extends Component{
     constructor(){
         super();
-        this.state = {
+        this.state={
             index:0
         }
     }
     render(){
-        let opts = {
-            continuous: false,
+        let opt={
+            continuous: true,
             callback:(index)=>{
-                this.setState({
-                    index
-                });
+                this.setState({index});
             }
-        };
+        }
         return (
-            <div >
-                <ReactSwipe className="carousel" swipeOptions={opts}>
-                    <div>
-                        <ul>
-                            <Link to="/search/jingdian"><li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li></Link>
-                            <Link to="/search/jingdian"><li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li></Link>
-                            <Link to="/search/jingdian"><li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li></Link>
-                            <Link to="/search/jingdian"><li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li></Link>
-                            <Link to="/search/jingdian"><li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li></Link>
-                            <Link to="/search/jingdian"><li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li></Link>
-                            <Link to="/search/jingdian"><li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li></Link>
-                            <Link to="/search/jingdian"><li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li></Link>
-                            <Link to="/search/jingdian"><li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li></Link>
-                            <Link to="/search/jingdian"><li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li></Link>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                            <li>
-                                <i className="iconfont icon-coupons"></i>
-                                <span>美食</span>
-                            </li>
-                        </ul>
-                    </div>
+            <div className="wrap">
+                <ReactSwipe className="carousel" swipeOptions={opt}>
+                    <div><img src={require("./1.jpg")} alt=""/></div>
+                    <div><img src={require("./2.jpg")} alt=""/></div>
+                    <div><img src={require("./3.jpg")} alt=""/></div>
                 </ReactSwipe>
                 <ul className="dots">
-                    <li className={this.state.index==0?"active":""}></li>
-                    <li className={this.state.index==1?"active":""}></li>
-                    <li className={this.state.index==2?"active":""}></li>
+                    <li className={this.state.index==0?"cur":""}></li>
+                    <li className={this.state.index==1?"cur":""}></li>
+                    <li className={this.state.index==2?"cur":""}></li>
                 </ul>
             </div>
         )

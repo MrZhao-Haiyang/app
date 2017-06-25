@@ -21,7 +21,8 @@ module.exports = {
                         require('autoprefixer') //添加css前缀
                     ]
                 }
-            },'less-loader'])}
+            },'less-loader'])},
+            {test:/\.(jpg|png)/,use:"url-loader?limit=8192"}
         ]
     },
     plugins: [
